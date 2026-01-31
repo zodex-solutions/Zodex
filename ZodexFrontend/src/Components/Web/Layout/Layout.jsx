@@ -5,6 +5,7 @@ import { Outlet, useLocation } from "react-router";
 // import Prism from "../AnimationBg/prism";
 import Footer from "./Footer";
 import { WebHeader } from "./WebHeader";
+import UpperBar from "./UpperBar";
 // import PrismaticBurst from "../AnimationBg/PrismaticBurst";
 // import BlogSection from "../../../Pages/Web/Landing/BlogSection";
 // import DownloadAppSection from "../../../Pages/Web/Landing/DownloadAppSection";
@@ -42,7 +43,7 @@ const UserLayout = () => {
         showHeader={showHeader}
         setShowHeader={setShowHeader}
       />
-      {/* <UpperBar sidebar={sidebar} setSidebar={setSidebar} /> */}
+      <UpperBar sidebar={sidebar} setSidebar={setSidebar} />
       {/* <div className="absolute !bg-red-500 top-0 bottom-0 h-full z-10  right-0 left-0  "> */}
       <main className="h-full -mb-6 smooth-content   w-[100vw] relative z-10 ">
         <Outlet />

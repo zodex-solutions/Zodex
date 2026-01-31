@@ -2,11 +2,8 @@ import React, { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router";
 
 import { HiMiniBars3CenterLeft } from "react-icons/hi2";
-// import { wha } from "lucide-react";
-
-import { FaGithub, FaLinkedinIn, FaTwitter, FaWhatsapp } from "react-icons/fa";
+import { FaWhatsapp } from "react-icons/fa";
 import { FaDiscord } from "react-icons/fa";
-
 import { useMediaQuery } from "react-responsive";
 import Title from "../Text/title";
 import { useScroll } from "../../../Context/ScrollContext";
@@ -27,7 +24,7 @@ export const WebHeader = ({
   const location = useLocation();
   const { isAtTop, setIsAtTop } = useScroll();
   const isDesktop = useMediaQuery({ query: "(min-width: 1340px)" });
-
+  const [topMenuOpen, setTopMenuOpen] = useState(false);
   function goTop() {
     window.scrollTo({
       top: 0,
@@ -123,7 +120,7 @@ export const WebHeader = ({
     if (isAtTop) {
       timer = setTimeout(() => {
         setDelayedWidth("50%");
-      }, 650); // 20 seconds
+      }, 650);
     } else {
       setDelayedWidth("50%");
     }
@@ -133,9 +130,8 @@ export const WebHeader = ({
 
   return (
     <>
-      {/* Transparent Header */}
       <header
-        className={`fixed top-3  px-2 xl:px-0 left-3 right-3 transform  z-50     lg:py-0 py-2   xl:container  mx-auto rounded-full  transition-all duration-700   `}
+        className={`fixed top-3  px-2 xl:px-0 left-3 right-3 transform  z-50     lg:py-0 p   xl:container  mx-auto rounded-full  transition-all duration-700   `}
         style={{
           transform:
             (location.pathname === "/" ? isAtTop : showHeader) || sidebar
