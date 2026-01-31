@@ -23,7 +23,7 @@ app.use(
       "Accept",
       "Origin",
     ],
-  })
+  }),
 );
 app.use(express.json());
 
