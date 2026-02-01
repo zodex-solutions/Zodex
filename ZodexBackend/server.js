@@ -20,11 +20,7 @@ app.use(express.json());
 
 app.use(
   cors({
-    origin: [
-      "http://localhost:5173",
-      "https://it.zodex.in",
-      "https://www.it.zodex.in",
-    ],
+    origin: ["http://localhost:5173", "https://zodex.in"],
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
     allowedHeaders: [
       "Content-Type",
